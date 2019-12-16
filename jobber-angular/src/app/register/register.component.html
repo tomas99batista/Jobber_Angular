@@ -1,37 +1,50 @@
-<label>
-  <p>First Name</p>
-  <input type="text" [(ngModel)]="firstName"/>
-</label>
-<label>
-  <p>Last Name</p>
-  <input type="text" [(ngModel)]="lastName"/>
-</label>
-<label>
-  <p>Birth Date</p>
-  <input type="date" [(ngModel)]="bDate"/>
-</label>
-<label>
-  <p>Email</p>
-  <input type="email" [(ngModel)]="email"/>
-</label>
-<label>
-  <p>Password</p>
-  <input type="password" [(ngModel)]="password" placeholder="password"/>
-</label>
-<label>
-  <p>Phone</p>
-  <input type="text" [(ngModel)]="phone"/>
-</label>
-<label>
-  <p>City</p>
-  <input type="text" [(ngModel)]="city"/>
-</label>
-<label>
-  <p>Website</p>
-  <input type="text" [(ngModel)]="website"/>
-</label>
-<label>
-  <p>Sector</p>
-  <input type="text" [(ngModel)]="sector"/>
-</label>
-<button (click)="ButtonClick()">Register</button>
+<div class="container" style="margin-top: 110px; margin-bottom: 20px; background: #f2f2f2;border-radius: 20px;">
+  <h1>Register</h1>
+  <div class = "form-group" style="margin-top: 30px;">
+    <label class="col-lg-6">
+      <p>First Name</p>
+      <input type="text" [(ngModel)]="firstName"/>
+    </label>
+    <label class="col-lg-6">
+      <p>Last Name</p>
+      <input type="text" [(ngModel)]="lastName"/>
+    </label>
+    <label class="col-lg-6">
+      <p>Birth Date</p>
+      <input type="date" [(ngModel)]="bDate"/>
+    </label>
+    <label class="col-lg-6">
+      <p>Email</p>
+      <input type="email" [(ngModel)]="email"/>
+    </label>
+    <label class="col-lg-6">
+      <p>Password</p>
+      <input type="password" [(ngModel)]="password" placeholder="password"/>
+    </label>
+    <label class="col-lg-6">
+      <p>Phone</p>
+      <input type="text" [(ngModel)]="phone"/>
+    </label>
+    <label class="col-lg-6">
+      <p>City</p>
+      <input type="text" [(ngModel)]="city"/>
+    </label>
+    <label class="col-lg-6">
+      <p>Website</p>
+      <input type="text" [(ngModel)]="website"/>
+    </label>
+    <label class="col-lg-6">
+      <p>Sector</p>
+      <input type="text" [(ngModel)]="sector"/>
+    </label>
+  </div>
+  <button (click)="ButtonClick()" class="btn btn-secondary">Register</button>
+  <div class = "border-top pt-3">
+    <small class="text-muted">
+      <a routerLink="/login">
+        Already have an account? Login here.
+      </a>
+    </small>
+  </div>
+  <br>
+</div>
