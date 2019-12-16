@@ -26,15 +26,13 @@ class Utilizador(models.Model):
 class Empresa(models.Model):
     id = models.AutoField(primary_key=True)  # Id_autogerated
     # Details
-    first_name = models.CharField(max_length=70)
-    last_name = models.CharField(max_length=70)
+    company_name = models.CharField(max_length=50)
     email = models.EmailField(unique=True)
     password = models.CharField(max_length=20)
     phone = models.CharField(max_length=20)
     city = models.CharField(max_length=50)
     website = models.URLField()
-    sector = models.CharField(max_length=20)
-    company_name = models.CharField(max_length=50)
+    job_sector = models.IntegerField(choices=JOB_SECTOR, default=1)  # IT, Economy
     
     # jobs = models.ManyToOneRel()
 
@@ -42,8 +40,8 @@ class Empresa(models.Model):
         db_table = 'empresa'
 
     def __str__(self):
-        return self.first_name + self.last_name
-    
+        return self.company_name
+
 class Emprego(models.Model):
     id = models.AutoField(primary_key=True)  # Id_autogerated
     title = models.CharField(max_length=70)
@@ -51,11 +49,11 @@ class Emprego(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     
     # EMPRESA
-    empresa_fk = models.ForeignKey(Empresa, on_delete=models.CASCADE)
+    empresa_fk = models.ForeignKey(Empresa, on_delete=models.CASCADE, null=True)
     
-    location = models.IntegerField(choices=LOCATION)  # Pode ser Remote, no Local da empresa ou noutra sede ou sth else
+    location = models.IntegerField(choices=LOCATION, default=1) # Pode ser Remote, no Local da empresa ou noutra sede ou sth else
     # Professional Details
-    job_sector = models.IntegerField(choices=JOB_SECTOR)  # IT, Economy
+    job_sector = models.IntegerField(choices=JOB_SECTOR, default=1)  # IT, Economy
 
     class Meta:
         db_table = 'emprego'
