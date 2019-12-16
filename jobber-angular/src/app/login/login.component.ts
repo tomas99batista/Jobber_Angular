@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {AuthServiceService} from '../auth-service.service';
 
@@ -9,10 +9,11 @@ import {AuthServiceService} from '../auth-service.service';
 })
 export class LoginComponent implements OnInit {
 
-  email = ''
-  password = ''
+  email = '';
+  password = '';
 
-  constructor(private authService: AuthServiceService) { }
+  constructor(private authService: AuthServiceService) {
+  }
 
   ngOnInit() {
   }
@@ -20,6 +21,6 @@ export class LoginComponent implements OnInit {
   ButtonClick() {
     this.authService.login(this.email, this.password).subscribe((res) => {
       console.log(res.user);
-    })
+    });
   }
 }

@@ -7,12 +7,20 @@ import { LoginComponent } from './login/login.component';
 import {FormsModule} from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
 import { RegisterComponent } from './register/register.component';
+import { NavbarComponent } from './navbar/navbar.component';
+import { IndexComponent } from './index/index.component';
+import { ProfileComponent } from './profile/profile.component';
+import { PostJobComponent } from './post-job/post-job.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    NavbarComponent,
+    IndexComponent,
+    ProfileComponent,
+    PostJobComponent
   ],
   imports: [
     BrowserModule,
