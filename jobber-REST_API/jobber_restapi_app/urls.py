@@ -8,5 +8,6 @@ urlpatterns = [
     url(r'^emprego/$', views.empregoList.as_view(), name='emprego-list'),
     url(r'^utilizador/$', views.utilizadorList.as_view(), name='emprego-list'),
     url(r'^empresa/$', views.empresaList.as_view(), name='emprego-list'),
-
+    url(r'^auth/login', views.login, name='login'),
+    url(r'^auth/register', views.regist, name='regist'),
 ]

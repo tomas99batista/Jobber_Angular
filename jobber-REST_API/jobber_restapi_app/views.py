@@ -1,7 +1,9 @@
-from django.shortcuts import render
-from rest_framework import generics
+from django.shortcuts import render, get_object_or_404
+from rest_framework import generics, status
+from rest_framework.response import Response
 from .models import *
 from .serializers import *
+from rest_framework.decorators import api_view
 
 # All empregos
 class empregoList(generics.ListCreateAPIView):
@@ -41,3 +43,21 @@ class utilizador_by_idList(generics.ListCreateAPIView):
     def get_queryset(self):
         queryset = Emprego.objects.filter(id=self.kwargs['post_id'])
         return queryset
+
+@api_view(['POST'])
+def login(request):
+    data = request.data
+    user = get_object_or_404(Utilizador, email=data['email'])
+    if user.password == data['password']:
+        return Response(data={'user': user} ,status=201)
+    else:
+        return Response(data={'Failed combination'}, status=400)
+    
+@api_view(['POST'])
+def regist(request):
+    data = request.data
+    serializer = UtilizadorSerializer(data=request.data)
+    if serializer.is_valid():
+        serializer.save()
+        return Response(serializer.data, status=status.HTTP_201_CREATED)
+    return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)

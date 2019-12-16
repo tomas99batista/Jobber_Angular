@@ -5,12 +5,10 @@ from .choices import *
 # Create your models here.
 class Utilizador(models.Model):
     id = models.AutoField(primary_key=True)  # Id_autogerated
-    user = models.OneToOneField(User, on_delete=models.CASCADE)
     # Details
     first_name = models.CharField(max_length=70)
     last_name = models.CharField(max_length=70)
     b_date = models.DateField()
-    curriculum = models.FileField()
     email = models.EmailField(unique=True)
     password = models.CharField(max_length=20)
     phone = models.CharField(max_length=20)
