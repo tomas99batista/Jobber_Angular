@@ -41,22 +41,44 @@ class utilizador_by_idList(generics.ListCreateAPIView):
     queryset = Utilizador.objects.all()
     serializer_class = UtilizadorSerializer
     def get_queryset(self):
-        queryset = Emprego.objects.filter(id=self.kwargs['post_id'])
+        queryset = Utilizador.objects.filter(id=self.kwargs['post_id'])
         return queryset
 
+# Utilizador Login
 @api_view(['POST'])
-def login(request):
+def login_user(request):
     data = request.data
     user = get_object_or_404(Utilizador, email=data['email'])
     if user.password == data['password']:
-        return Response(data={'user': user} ,status=201)
+        return Response(data={'user': UtilizadorSerializer(user).data} ,status=201)
     else:
         return Response(data={'Failed combination'}, status=400)
     
+# Utilizador Regist
 @api_view(['POST'])
-def regist(request):
+def register_user(request):
     data = request.data
     serializer = UtilizadorSerializer(data=request.data)
+    if serializer.is_valid():
+        serializer.save()
+        return Response(serializer.data, status=status.HTTP_201_CREATED)
+    return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+# Empresa Login
+@api_view(['POST'])
+def login_empresa(request):
+    data = request.data
+    user = get_object_or_404(Empresa, email=data['email'])
+    if user.password == data['password']:
+        return Response(data={'user': EmpresaSerializer(user).data} ,status=201)
+    else:
+        return Response(data={'Failed combination'}, status=400)
+    
+# Empresa Regist
+@api_view(['POST'])
+def register_empresa(request):
+    data = request.data
+    serializer = EmpresaSerializer(data=request.data)
     if serializer.is_valid():
         serializer.save()
         return Response(serializer.data, status=status.HTTP_201_CREATED)
