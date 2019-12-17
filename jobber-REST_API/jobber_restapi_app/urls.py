@@ -13,6 +13,7 @@ urlpatterns = [
     # User
     url(r'^auth/login_user/', views.login_user, name='login_user'),
     url(r'^auth/login_empresa/', views.login_empresa, name='login_empresa'),
+    url(r'^utilizador_by_email/', views.utilizador_by_email, name='utilizador_by_email'),
     # Empresa
     url(r'^auth/register_user/', views.register_user, name='register_user'),
     url(r'^auth/register_empresa/', views.register_empresa, name='register_empresa'),
