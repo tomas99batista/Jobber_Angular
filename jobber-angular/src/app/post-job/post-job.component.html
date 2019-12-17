@@ -3,11 +3,11 @@
   <div class = "form-group">
     <label class="col-lg-12" style="margin-top: 10px;">
       <p>Title</p>
-      <input class="form-control" type="text" placeholder="Ex: 'Front-End Developer'"/>
+      <input class="form-control" [(ngModel)]="title" type="text" placeholder="Ex: 'Front-End Developer'"/>
     </label>
     <label class="col-lg-12">
       <p>Location</p>
-      <select class="form-control">
+      <select [ngModel]="''" (ngModelChange)="jobSector = $event" class="form-control input-sm">
         <option value = "Aveiro">Aveiro</option>
         <option value = "Viseu">Viseu</option>
         <option value = "Porto">Porto</option>
@@ -30,7 +30,7 @@
     </label>
     <label class="col-lg-12">
       <p>Job Sector</p>
-      <select class="form-control">
+      <select [ngModel]="''" (ngModelChange)="jobSector = $event" class="form-control input-sm">
         <option value = "Software Development">Software Development</option>
         <option value = "Analyst">Analyst</option>
         <option value = "Project Management">Project Management</option>
@@ -45,9 +45,9 @@
     </label>
     <label class="col-lg-12">
       <p>Description</p>
-      <textarea class="form-control" rows="5" id="comment" placeholder="Ex: Job functions, benefits, requirements, ..."></textarea>
+      <textarea class="form-control" [(ngModel)]="description" rows="5" id="comment" placeholder="Ex: Job functions, benefits, requirements, ..."></textarea>
     </label>
   </div>
-  <button class="btn btn-secondary" style="margin-left: 15px; margin-bottom: 15px;">Post Job</button>
+  <button (click)="ButtonClick()" class="btn btn-secondary" style="margin-left: 15px;">Post Job</button>
   <button class="btn btn-secondary" style="float: right; margin-right: 15px;">Cancel</button>
 </div>
