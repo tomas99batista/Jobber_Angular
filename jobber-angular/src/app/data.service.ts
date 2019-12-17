@@ -8,7 +8,7 @@ import {Users} from "./users";
   providedIn: "root"
 })
 export class DataService {
-  baseUrl = "http://localhost:8000"; // Trocar para  "http://tomas99batista.pythonanywhere.com" antes de ser deployed;
+  baseUrl = "http://tomas99batista.pythonanywhere.com"; // Trocar para   antes de ser deployed;
 
   constructor(private httpClient: HttpClient) {}
 

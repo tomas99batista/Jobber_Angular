@@ -13,7 +13,7 @@ export interface Job {
   providedIn: "root"
 })
 export class PostJobService {
-  baseUrl = "http://localhost:8000"; // Trocar para  "http://tomas99batista.pythonanywhere.com" antes de ser deployed;
+  baseUrl = "http://tomas99batista.pythonanywhere.com"; // Trocar para   antes de ser deployed;
 
   constructor(private http: HttpClient) {}
 
