@@ -11,7 +11,7 @@ Jobber é um website para procurar e publicar ofertas de emprego.
 
 # Website
 ### Deployment:
-O nosso website foi deployed no [Heroku](heroku.com)
+O nosso website foi deployed no [Heroku](https://jobber-angular.herokuapp.com/)
 
 ### Funções disponíveis:
 
@@ -19,7 +19,7 @@ O nosso website foi deployed no [Heroku](heroku.com)
 
 > Visualizar, Inserir Detalhes e Atualizar Perfil Utilizador
 
-> Publicar ofertas de emprego (Necessita estar registado e loggado como empresa)
+> Publicar ofertas de emprego (Necessita estar registado e loggado)
 
 > É possível ver todas as ofertas de emprego disponíveis no website
 
@@ -47,6 +47,7 @@ API foi deployed no pythonanywhere: [Python Anywhere](http://tomas99batista.pyth
 |*/empresa/*|Empresas | **GET, POST** |{company_name, email, password, phone, city, website, job_sector}
 |*/emprego/{id}/*|Emprego por id| **GET, PUT** |{title, description, created_at, empresa_fk, location, job_sector}
 |*/utilizador/{id}/*|Utilizador por id | **GET, PUT** |{first_name, last_name, b_date, email, password, phone, city, website, sector}
+|*/utilizador_by_email/	*|Utilizador pelo email	 | **GET** |{first_name, last_name, b_date, email, password, phone, city, website, sector}
 |*/empresa/{id}/*|Empresa por id | **GET, PUT** |{company_name, email, password, phone, city, website, job_sector}
 |*/auth/login_user/*|Login User | **POST** |{email, password}
 |*/auth/register_user/*|Regist User | **POST** |{first_name, last_name, b_date, email, password, phone, city, website, sector}

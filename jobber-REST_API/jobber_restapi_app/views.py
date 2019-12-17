@@ -42,7 +42,7 @@ class utilizadorList(generics.ListCreateAPIView):
 
 # Users by id
 class utilizador_by_idList(generics.ListCreateAPIView):
-    queryset = Utilizador.objects.all()
+    queryset = Utilizador.objects.all() 
     serializer_class = UtilizadorSerializer
     def get_queryset(self):
         queryset = Utilizador.objects.filter(id=self.kwargs['post_id'])
@@ -58,6 +58,13 @@ def login_user(request):
     else:
         return Response(data={'Failed combination'}, status=400)
     
+# User by email
+@api_view(['GET'])
+def utilizador_by_email(request):
+    data = request.data
+    user = get_object_or_404(Utilizador, email=data['email'])
+    return Response(data={'user': UtilizadorSerializer(user).data} ,status=201)
+
 # Utilizador Regist
 @api_view(['POST'])
 def register_user(request):
@@ -87,3 +94,4 @@ def register_empresa(request):
         serializer.save()
         return Response(serializer.data, status=status.HTTP_201_CREATED)
     return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
