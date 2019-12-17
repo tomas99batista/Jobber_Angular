@@ -56,19 +56,19 @@ API foi deployed no pythonanywhere: [Python Anywhere](http://tomas99batista.pyth
 # Nota
 - Caso o Heroku e o PythonAnywhere não funcionem por motivos alheios a nós, incluímos também os ficheiros para a Rest API e para o projeto Angular para poderem ser corridos localmente.
 
-## Install REST API
+- Install REST API
 
-`$ virtualenv -p python3 venv`
+-- `$ virtualenv -p python3 venv`
 
-`$ source ./venv/bin/activate`
+-- `$ source ./venv/bin/activate`
 
-`$ pip3 install -r requirements.txt`
+-- `$ pip3 install -r requirements.txt`
 
-## Run REST API
+- Run REST API
 
-`$ source ./venv/bin/activate`
+-- `$ source ./venv/bin/activate`
 
-`$ python3 manage.py runserver`
+-- `$ python3 manage.py runserver`
 
-## Run Angular Website
-`$ ng serve`
+- Run Angular Website
+-- `$ ng serve`
