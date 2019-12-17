@@ -43,7 +43,7 @@
       </tr>
       </thead>
       <tbody>
-      <tr *ngFor="let job of jobs | filter:searchText">
+      <tr *ngFor="let job of jobs | filter:searchText" (click)="onRowClick(job)">
         <td>{{job.title}}</td>
         <td>{{getJobName(job.job_sector)}}</td>
         <td>{{getJobLocation(job.location)}}</td>

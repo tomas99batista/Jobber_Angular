@@ -28,4 +28,8 @@ export class SearchComponent implements OnInit {
   getJobLocation = (locationId: number) => {
     return LocationEnum[locationId];
   };
+
+  onRowClick = (job: Job) => {
+    alert(JSON.stringify(job));
+  };
 }
