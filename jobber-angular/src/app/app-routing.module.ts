@@ -4,6 +4,7 @@ import {LoginComponent} from './login/login.component';
 import {RegisterComponent} from './register/register.component';
 import {PostJobComponent} from './post-job/post-job.component';
 import {SearchComponent} from './search/search.component';
+import {ProfileComponent} from './profile/profile.component';
 
 
 const routes: Routes = [
@@ -11,6 +12,7 @@ const routes: Routes = [
   { path: 'register', component: RegisterComponent },
   { path: 'post-job', component: PostJobComponent},
   { path: 'search', component: SearchComponent},
+  { path: 'profile', component: ProfileComponent},
 
   { path: '',
     redirectTo: '/login',
