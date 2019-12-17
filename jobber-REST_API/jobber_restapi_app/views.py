@@ -5,6 +5,10 @@ from .models import *
 from .serializers import *
 from rest_framework.decorators import api_view
 
+# Request
+def index(request):
+    return render(request, "index.html")
+
 # All empregos
 class empregoList(generics.ListCreateAPIView):
     queryset = Emprego.objects.all()
