@@ -1,38 +1,36 @@
-import {Component, OnInit} from '@angular/core';
-import {Job, PostJobService} from '../post-job.service';
-import {User} from '../auth-service.service';
+import { Component, OnInit } from "@angular/core";
+import { Job, PostJobService } from "../post-job.service";
+import { User } from "../auth-service.service";
+import { Router } from "@angular/router";
 
 @Component({
-  selector: 'app-post-job',
-  templateUrl: './post-job.component.html',
-  styleUrls: ['./post-job.component.css']
+  selector: "app-post-job",
+  templateUrl: "./post-job.component.html",
+  styleUrls: ["./post-job.component.css"]
 })
 export class PostJobComponent implements OnInit {
+  title = "";
 
-  title = '';
+  description = "";
 
-  description = '';
+  location = 0;
 
-  location = '';
+  jobSector = 0;
 
-  jobSector = '';
+  constructor(private postjob: PostJobService, private router: Router) {}
 
-  constructor(private postjob: PostJobService) {
-  }
-
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
   ButtonClick() {
     const job: Job = {
       title: this.title,
       description: this.description,
-      location: this.location,
-      job_sector: this.jobSector,
+      location: Number(this.location),
+      job_sector: Number(this.jobSector)
     };
 
-    this.postjob.postJob(job).subscribe((res) => {
-      console.log(res.job);
+    this.postjob.postJob(job).subscribe(res => {
+      this.router.navigate(["/search"]);
     });
   }
 }

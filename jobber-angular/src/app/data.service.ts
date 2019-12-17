@@ -1,25 +1,28 @@
-import {Injectable} from '@angular/core';
-import {HttpClient} from '@angular/common/http';
+import { Injectable } from "@angular/core";
+import { HttpClient } from "@angular/common/http";
+import { Observable } from "rxjs";
+import { Job } from "./post-job.service";
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: "root"
 })
 export class DataService {
-  baseUrl: 'http://localhost:4200';
+  baseUrl = "http://localhost:8000"; // Trocar para  "http://tomas99batista.pythonanywhere.com" antes de ser deployed;
 
-  constructor(private httpClient: HttpClient) {
+  constructor(private httpClient: HttpClient) {}
+
+  getUsers() {
+    const url = `${this.baseUrl}/users/`;
+    return this.httpClient.get(url);
   }
 
-  get_users() {
-    return this.httpClient.get(this.baseUrl + '/users');
+  getCompanies() {
+    const url = `${this.baseUrl}/empresa/`;
+    return this.httpClient.get(url);
   }
 
-  get_company() {
-    return this.httpClient.get(this.baseUrl + '/company');
+  getJobs(): Observable<Job[]> {
+    const url = `${this.baseUrl}/emprego/`;
+    return this.httpClient.get<Job[]>(url);
   }
-
-  get_jobs() {
-    return this.httpClient.get(this.baseUrl + '/jobs');
-  }
-
 }
