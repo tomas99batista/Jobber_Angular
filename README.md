@@ -19,7 +19,7 @@ O nosso website foi deployed no [Heroku](https://jobber-angular.herokuapp.com/)
 
 > Visualizar, Inserir Detalhes e Atualizar Perfil Utilizador
 
-> Publicar ofertas de emprego (Necessita estar registado e loggado como empresa)
+> Publicar ofertas de emprego (Necessita estar registado e loggado)
 
 > É possível ver todas as ofertas de emprego disponíveis no website
 
