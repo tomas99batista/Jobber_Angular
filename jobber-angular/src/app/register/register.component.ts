@@ -1,39 +1,37 @@
-import {Component, OnInit} from '@angular/core';
-import {AuthServiceService, User} from '../auth-service.service';
+import { Component, OnInit } from "@angular/core";
+import { AuthServiceService, User } from "../auth-service.service";
+import { Router } from "@angular/router";
 
 @Component({
-  selector: 'app-register',
-  templateUrl: './register.component.html',
-  styleUrls: ['./register.component.css']
+  selector: "app-register",
+  templateUrl: "./register.component.html",
+  styleUrls: ["./register.component.css"]
 })
 export class RegisterComponent implements OnInit {
+  firstName = "";
 
-  firstName = '';
+  lastName = "";
 
-  lastName = '';
+  bDate = "";
 
-  bDate = '';
+  email = "";
 
-  email = '';
+  password = "";
 
-  password = '';
+  phone = "";
 
-  phone = '';
+  city = "";
 
-  city = '';
+  website = "";
 
-  website = '';
+  sector = "";
 
-  sector = '';
+  constructor(
+    private authService: AuthServiceService,
+    private router: Router
+  ) {}
 
-
-  constructor(private authService: AuthServiceService) {
-
-  }
-
-  ngOnInit() {
-
-  }
+  ngOnInit() {}
 
   ButtonClick() {
     const user: User = {
@@ -45,11 +43,10 @@ export class RegisterComponent implements OnInit {
       phone: this.phone,
       city: this.city,
       website: this.website,
-      sector: this.sector,
-
+      sector: this.sector
     };
-    this.authService.register(user).subscribe((res) => {
-      console.log(res.user);
+    this.authService.register(user).subscribe(res => {
+      this.router.navigate(["/login"]);
     });
   }
 }

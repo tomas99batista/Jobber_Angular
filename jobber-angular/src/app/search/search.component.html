@@ -43,11 +43,11 @@
       </tr>
       </thead>
       <tbody>
-      <tr *ngFor="let hero of heroes | filter:searchText">
-        <td>{{hero.title}}</td>
-        <td>{{hero.job_sector}}</td>
-        <td>{{hero.location}}</td>
-        <td>{{hero.company}}</td>
+      <tr *ngFor="let job of jobs | filter:searchText">
+        <td>{{job.title}}</td>
+        <td>{{getJobName(job.job_sector)}}</td>
+        <td>{{getJobLocation(job.location)}}</td>
+        <td>{{job.company}}</td>
       </tr>
       </tbody>
     </table>

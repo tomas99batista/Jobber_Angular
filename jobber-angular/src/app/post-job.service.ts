@@ -1,25 +1,24 @@
-import {Injectable} from '@angular/core';
-import {Observable} from 'rxjs';
-import {User} from './auth-service.service';
-import {HttpClient} from '@angular/common/http';
+import { Injectable } from "@angular/core";
+import { Observable } from "rxjs";
+import { HttpClient } from "@angular/common/http";
 
 export interface Job {
   title: string;
   description: string;
-  location: string;
-  job_sector: string;
+  location: number;
+  job_sector: number;
 }
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: "root"
 })
-
 export class PostJobService {
+  baseUrl = "http://localhost:8000"; // Trocar para  "http://tomas99batista.pythonanywhere.com" antes de ser deployed;
 
-  constructor(private http: HttpClient) {
-  }
+  constructor(private http: HttpClient) {}
 
   public postJob(job: Job): Observable<{ job: Job }> {
-    return this.http.post<{ job: Job }>('http://127.0.0.1:8000/', {...job});
+    const url = `${this.baseUrl}/emprego/`;
+    return this.http.post<{ job: Job }>(url, job);
   }
 }
