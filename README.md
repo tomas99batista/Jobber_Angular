@@ -4,11 +4,9 @@ Tecnologias e Programação Web - Universidade de Aveiro 2019/20
 
 Jobber é um website para procurar e publicar ofertas de emprego.
 
-Tomás Batista | 89296
-
-João Dias | 89236
-
-Flávia Figueiredo | 88886 
+- Tomás Batista | 89296
+- João Dias | 89236
+- Flávia Figueiredo | 88886 
 
 
 # Website
