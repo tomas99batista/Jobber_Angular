@@ -13,7 +13,6 @@ export class IndexComponent implements OnInit {
   ngOnInit() {}
 
   logOut() {
-    sessionStorage.removeItem('email');
     console.log(sessionStorage);
   }
 }

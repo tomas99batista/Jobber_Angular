@@ -17,7 +17,9 @@ export class LoginComponent implements OnInit {
     private router: Router
   ) {
   }
+
   ngOnInit() {
+    sessionStorage.clear();
     console.log(sessionStorage);
   }
 
