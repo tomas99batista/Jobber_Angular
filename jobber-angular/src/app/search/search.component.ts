@@ -1,12 +1,11 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  selector: 'app-search',
+  templateUrl: './search.component.html'
 })
-export class AppComponent {
-  title = 'jobber-angular';
+export class SearchComponent  {
+  title = 'Angular Search Using ng2-search-filter';
   searchText;
   heroes = [
     { id: 11, name: 'Mr. Nice', country: 'India' },
