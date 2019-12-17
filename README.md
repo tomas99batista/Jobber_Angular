@@ -47,6 +47,7 @@ API foi deployed no pythonanywhere: [Python Anywhere](http://tomas99batista.pyth
 |*/empresa/*|Empresas | **GET, POST** |{company_name, email, password, phone, city, website, job_sector}
 |*/emprego/{id}/*|Emprego por id| **GET, PUT** |{title, description, created_at, empresa_fk, location, job_sector}
 |*/utilizador/{id}/*|Utilizador por id | **GET, PUT** |{first_name, last_name, b_date, email, password, phone, city, website, sector}
+|*/utilizador_by_email/	*|Utilizador pelo email	 | **GET** |{first_name, last_name, b_date, email, password, phone, city, website, sector}
 |*/empresa/{id}/*|Empresa por id | **GET, PUT** |{company_name, email, password, phone, city, website, job_sector}
 |*/auth/login_user/*|Login User | **POST** |{email, password}
 |*/auth/register_user/*|Regist User | **POST** |{first_name, last_name, b_date, email, password, phone, city, website, sector}
