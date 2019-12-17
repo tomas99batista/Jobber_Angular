@@ -13,7 +13,7 @@ import { PostJobComponent } from './post-job/post-job.component';
 
 // search module
 import {Ng2SearchPipeModule} from 'ng2-search-filter';
-import {SearchComponent} from "./search/search.component";
+import {SearchComponent} from './search/search.component';
 
 @NgModule({
   declarations: [
