@@ -1,47 +1,47 @@
-<div class="container" style="margin-top: 110px; margin-bottom: 20px; background: #f2f2f2;border-radius: 20px;">
-  <h1>Register</h1>
+<div class="container" style="margin-top: 110px; margin-bottom: 20px; background: #f2f2f2;border-radius: 20px; padding: 15px;">
+  <h1 style="margin-left: 15px;">Register</h1>
   <div class = "form-group" style="margin-top: 30px;">
-    <label class="col-lg-6">
+    <label class="col-lg-6" >
       <p>First Name</p>
-      <input type="text" [(ngModel)]="firstName"/>
+      <input type="text" [(ngModel)]="firstName" class="form-control"/>
     </label>
     <label class="col-lg-6">
       <p>Last Name</p>
-      <input type="text" [(ngModel)]="lastName"/>
+      <input type="text" [(ngModel)]="lastName" class="form-control"/>
     </label>
     <label class="col-lg-6">
       <p>Birth Date</p>
-      <input type="date" [(ngModel)]="bDate"/>
+      <input type="date" [(ngModel)]="bDate" class="form-control"/>
     </label>
     <label class="col-lg-6">
       <p>Email</p>
-      <input type="email" [(ngModel)]="email"/>
+      <input type="email" [(ngModel)]="email" class="form-control"/>
     </label>
     <label class="col-lg-6">
       <p>Password</p>
-      <input type="password" [(ngModel)]="password"/>
+      <input type="password" [(ngModel)]="password" class="form-control"/>
     </label>
     <label class="col-lg-6">
       <p>Phone</p>
-      <input type="text" [(ngModel)]="phone"/>
+      <input type="text" [(ngModel)]="phone" class="form-control"/>
     </label>
     <label class="col-lg-6">
       <p>City</p>
-      <input type="text" [(ngModel)]="city"/>
+      <input type="text" [(ngModel)]="city" class="form-control"/>
     </label>
     <label class="col-lg-6">
       <p>Website</p>
-      <input type="text" [(ngModel)]="website"/>
+      <input type="text" [(ngModel)]="website" class="form-control"/>
     </label>
     <label class="col-lg-6">
       <p>Sector</p>
-      <input type="text" [(ngModel)]="sector"/>
+      <input type="text" [(ngModel)]="sector" class="form-control"/>
     </label>
   </div>
-  <button (click)="ButtonClick()" class="btn btn-secondary">Register</button>
-  <div class = "border-top pt-3">
+  <button (click)="ButtonClick()" class="btn btn-secondary" style="margin-left: 15px;">Register</button>
+  <div class = "border-top pt-3" style="margin-top: 15px;">
     <small class="text-muted">
-      <a routerLink="/login">
+      <a routerLink="/login" style="margin-left: 15px;">
         Already have an account? Login here.
       </a>
     </small>
