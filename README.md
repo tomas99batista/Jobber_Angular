@@ -11,7 +11,7 @@ Jobber é um website para procurar e publicar ofertas de emprego.
 
 # Website
 ### Deployment:
-O nosso website foi deployed no [Heroku](heroku.com)
+O nosso website foi deployed no [Heroku](https://jobber-angular.herokuapp.com/)
 
 ### Funções disponíveis:
 
