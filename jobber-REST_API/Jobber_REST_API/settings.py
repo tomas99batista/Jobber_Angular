@@ -27,7 +27,6 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['tomas99batista.pythonanywhere.com', 'localhost']
 
-
 # Application definition
 
 INSTALLED_APPS = [
@@ -39,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'jobber_restapi_app',
     'rest_framework',
+    'corsheaders'
 ]
 
 MIDDLEWARE = [
@@ -49,8 +49,12 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-
+    'corsheaders.middleware.CorsMiddleware',
+    'django.middleware.common.BrokenLinkEmailsMiddleware',
+    'django.middleware.common.CommonMiddleware',
 ]
+
+CORS_ORIGIN_ALLOW_ALL = True
 
 ROOT_URLCONF = 'Jobber_REST_API.urls'
 

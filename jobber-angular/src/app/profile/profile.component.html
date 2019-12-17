@@ -1,0 +1,66 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" routerLink="/index"><b>Jobber</b></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" routerLink="/index">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/profile">Profile</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/search">Jobs</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/post-job">Post a Job</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/login">Log out</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<div class="container" style="margin-top: 110px; margin-bottom: 20px; background: #f2f2f2;border-radius: 20px; padding: 15px;">
+  <h1 style="margin-left: 15px;">User's Profile</h1>
+  <div class = "form-group">
+    <label class="col-lg-12" style="margin-top: 10px;">
+      <p>First Name</p>
+      <input class="form-control" type="text" placeholder="ex"/>
+    </label>
+    <label class="col-lg-12">
+      <p>Last Name</p>
+      <input class="form-control" type="text" placeholder="Ex: 'Front-End Developer'"/>
+    </label>
+    <label class="col-lg-12">
+      <p>Birth Date</p>
+      <input class="form-control" type="text" placeholder="Ex: 'Front-End Developer'"/>
+    </label>
+    <label class="col-lg-12">
+      <p>Email</p>
+      <input class="form-control" type="text" placeholder="Ex: 'Front-End Developer'"/>
+    </label>
+    <label class="col-lg-12">
+      <p>Phone</p>
+      <input class="form-control" type="text" placeholder="Ex: 'Front-End Developer'"/>
+    </label>
+    <label class="col-lg-12">
+      <p>City</p>
+      <input class="form-control" type="text" placeholder="Ex: 'Front-End Developer'"/>
+    </label>
+    <label class="col-lg-12">
+      <p>Website</p>
+      <input class="form-control" type="text" placeholder="Ex: 'Front-End Developer'"/>
+    </label>
+    <label class="col-lg-12">
+      <p>Sector</p>
+      <input class="form-control" type="text" placeholder="Ex: 'Front-End Developer'"/>
+    </label>
+  </div>
+  <button (click)="ButtonClick()" class="btn btn-secondary" style="margin-left: 15px;">Update</button>
+  <button class="btn btn-secondary" style="float: right; margin-right: 15px;">Return</button>
+</div>
