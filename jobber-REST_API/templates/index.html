@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+</style>
+</head>
+<body>
+
+<h2>API Possible requests</h2>
+
+<table>
+  <tr>
+    <th>URL</th>
+    <th>REQUEST</th>
+    <th>TYPE</th>
+    <th>DATA</th>
+  </tr>
+
+  <tr>
+    <td>/emprego</td>
+    <td>Empregos</td>
+    <td>GET, POST</td>
+    <td>{title, description, created_at, empresa_fk, location, job_sector}</td>
+  </tr>
+  <tr>
+    <td>/utilizador</td>
+    <td>Utilizadores</td>
+    <td>GET, POST</td>
+    <td>{first_name, last_name, b_date, email, password, phone, city, website, sector}</td>
+  </tr>
+  <tr>
+    <td>/empresa</td>
+    <td>Empresas</td>
+    <td>GET, POST</td>
+    <td>{company_name, email, password, phone, city, website, job_sector}</td>
+  </tr>
+
+  <tr>
+    <td>/emprego/{id}</td>
+    <td>Emprego por id</td>
+    <td>GET, PUT</td>
+    <td>{title, description, created_at, empresa_fk, location, job_sector}</td>
+  </tr>
+  <tr>
+    <td>/utilizador/{id}</td>
+    <td>Utilizador por id</td>
+    <td>GET, PUT</td>
+    <td>{first_name, last_name, b_date, email, password, phone, city, website, sector}</td>
+  </tr>
+  <tr>
+    <td>/empresa/{id}</td>
+    <td>Empresa por id</td>
+    <td>GET, PUT</td>
+    <td>{company_name, email, password, phone, city, website, job_sector}</td>
+  </tr>
+
+  <tr>
+    <td>/auth/login_user</td>
+    <td>Login User</td>
+    <td>POST</td>
+    <td>{email, password}</td>
+  </tr>
+  <tr>
+    <td>/auth/register_user</td>
+    <td>Regist User</td>
+    <td>POST</td>
+    <td>{first_name, last_name, b_date, email, password, phone, city, website, sector}</td>
+  </tr>
+  <tr>
+    <td>/auth/login_empresa</td>
+    <td>Login empresa</td>
+    <td>POST</td>
+    <td>{email, password}</td>
+  </tr>
+  <tr>
+    <td>/auth/register_empresa</td>
+    <td>Regist Empresa</td>
+    <td>POST</td>
+    <td>{company_name, email, password, phone, city, website, job_sector}</td>
+  </tr>
+
+
+
+</table>
+
+</body>
+</html>

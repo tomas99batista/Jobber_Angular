@@ -16,4 +16,7 @@ urlpatterns = [
     # Empresa
     url(r'^auth/register_user/', views.register_user, name='register_user'),
     url(r'^auth/register_empresa/', views.register_empresa, name='register_empresa'),
+    # / Page that contains all methods
+    url(r'', views.index, name='index'),
+
 ]

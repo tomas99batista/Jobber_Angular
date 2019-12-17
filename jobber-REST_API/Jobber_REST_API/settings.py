@@ -25,8 +25,7 @@ SECRET_KEY = 'wtjb+wsmz66be3&0_h9=9mn0-98tpr%1dn6^g&)6t=(+#--834'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*']
-
+ALLOWED_HOSTS = ['tomas99batista.pythonanywhere.com', 'localhost']
 
 # Application definition
 
@@ -54,6 +53,7 @@ MIDDLEWARE = [
     'django.middleware.common.BrokenLinkEmailsMiddleware',
     'django.middleware.common.CommonMiddleware',
 ]
+
 CORS_ORIGIN_ALLOW_ALL = True
 
 ROOT_URLCONF = 'Jobber_REST_API.urls'
@@ -61,7 +61,7 @@ ROOT_URLCONF = 'Jobber_REST_API.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
