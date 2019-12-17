@@ -2,6 +2,7 @@ import { Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
 import { Observable } from "rxjs";
 import { Job } from "./post-job.service";
+import {Users} from "./users";
 
 @Injectable({
   providedIn: "root"
@@ -25,4 +26,5 @@ export class DataService {
     const url = `${this.baseUrl}/emprego/`;
     return this.httpClient.get<Job[]>(url);
   }
+
 }

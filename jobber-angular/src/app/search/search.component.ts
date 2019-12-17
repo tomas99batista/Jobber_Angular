@@ -4,8 +4,9 @@ import { Job } from "../post-job.service";
 import { JobSectorEnum, LocationEnum } from "../shared.enum";
 
 @Component({
-  selector: "app-search",
-  templateUrl: "./search.component.html"
+  selector: 'app-search',
+  templateUrl: './search.component.html',
+  styleUrls: ['./search.component.css']
 })
 export class SearchComponent implements OnInit {
   title = "Search";

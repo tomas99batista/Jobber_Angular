@@ -1,16 +1,16 @@
-import {Component, OnInit} from "@angular/core";
-import {HttpClient} from "@angular/common/http";
-import {AuthServiceService} from "../auth-service.service";
-import {Router} from "@angular/router";
+import {Component, OnInit} from '@angular/core';
+import {HttpClient} from '@angular/common/http';
+import {AuthServiceService} from '../auth-service.service';
+import {Router} from '@angular/router';
 
 @Component({
-  selector: "app-login",
-  templateUrl: "./login.component.html",
-  styleUrls: ["./login.component.css"]
+  selector: 'app-login',
+  templateUrl: './login.component.html',
+  styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-  email = "";
-  password = "";
+  email = '';
+  password = '';
 
   constructor(
     private authService: AuthServiceService,
@@ -23,7 +23,7 @@ export class LoginComponent implements OnInit {
 
   ButtonClick() {
     this.authService.login(this.email, this.password).subscribe(res => {
-      this.router.navigate(["/index"]);
+      this.router.navigate(['/index']);
       sessionStorage.setItem('email', this.email);
       console.log(sessionStorage);
     });
