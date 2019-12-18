@@ -1,3 +1,4 @@
+
 import {Component, OnInit} from '@angular/core';
 import {AuthServiceService} from '../auth-service.service';
 import {Router} from '@angular/router';
@@ -30,7 +31,6 @@ export class ProfileComponent implements OnInit {
 
   ngOnInit() {
     this.dataService.getUsers().subscribe(response => {
-      this.users = response;
     });
   }
 
